@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>일일 박스 오피스</title>
+</head>
+<body>
+    <main class="container" style="width: 2400px !important;">
+        <article>
+            <header style="background-color: white; border-bottom: none;">
+                <hgroup>
+                    <h1 style="font-size: 40px; font-weight: 700; color: black;">일일 박스 오피스</h1>
+                </hgroup>
+                <form>
+                    <p style="font-weight: 700; margin: 0;">날짜 선택</p>
+                    <input type="date" id="date1" name="date1">
+                    <div class="radioContainer">
+                        <div class="radio1">
+                            <strong style="font-size: 32px;">다양성 구분</strong>
+                            <div style="margin-top: 20px;">
+                                <strong>전체</strong><input type="radio" id="multiMovieYn0" checked name="multiMovieYn">
+                                <strong>다양성</strong><input type="radio" id="multiMovieYn1" name="multiMovieYn">
+                                <strong>상업</strong><input type="radio" id="multiMovieYn2" name="multiMovieYn">
+                            </div>
+                        </div>
+                        <div class="radio2">
+                            <strong style="font-size: 32px;">국가 구분</strong>
+                            <div style="margin-top: 20px;">
+                                <strong>전체</strong><input type="radio" id="repNationCd1" name="repNationCd">
+                                <strong>한국</strong><input type="radio" id="repNationCd2" name="repNationCd">
+                                <strong>외국</strong><input type="radio" id="repNationCd3" name="repNationCd">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">순위</th>
+                        <th scope="col">개봉일</th>
+                        <th scope="col">영화명</th>
+                        <th scope="col">매출액</th>
+                        <th scope="col">매출액<br>점유율</th>
+                        <th scope="col">매출액증감<br>(전일대비)</th>
+                        <th scope="col">누적매출액</th>
+                        <th scope="col">관객수</th>
+                        <th scope="col">관객수증감<br>(전일대비)</th>
+                        <th scope="col">누적관객수</th>
+                        <th scope="col">스크린수</th>
+                        <th scope="col">상영횟수</th>
+                      </tr>
+                    </thead>
+                    <tbody class="moviebody"></tbody>
+                  </table>
+                  <footer>
+                    <table id="detail">
+                    </table>
+                  </footer>
+            </header>
+        </article>
+    </main>
+</body>
+</html>
