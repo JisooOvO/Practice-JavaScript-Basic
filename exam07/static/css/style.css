@@ -13,6 +13,12 @@ body{
     column-gap: 0px;
 }
 
+.cell{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .grid div{
     border: solid 1px grey;
 }
