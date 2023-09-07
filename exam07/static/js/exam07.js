@@ -4,11 +4,25 @@ document.addEventListener("DOMContentLoaded",()=>{
     let bombpos;
     let flag = 0;
 
+    /** 폭탄섞기 버튼 클릭 **/
     bt.addEventListener("click",()=>{
-        bombpos = bomb();        
+        let countbomb = 100;
+        let cntCell = 1;
+        bombpos = bomb();
+        touchcell.forEach( (item) => {
+            setTimeout( ()=>{
+                item.innerHTML = `<img src='./static/images/boom.png'>`;
+            },countbomb)
+            setTimeout( ()=>{
+                item.innerHTML = cntCell++;
+            },countbomb+50)
+            countbomb += 100;
+            
+        })        
         flag = 1;
     })
 
+    /** 터치 패널 동작 **/
     touchcell.forEach( (item) => {
         item.addEventListener("click", ()=>{
             if( flag != 1){
@@ -45,11 +59,10 @@ document.addEventListener("DOMContentLoaded",()=>{
             }
         })
     })
-
-
-
 })
 
+
+/** 폭탄 돌리기 **/
 function bomb(){
     let n = Math.floor(Math.random() * 9 +1) ;
     return n;
