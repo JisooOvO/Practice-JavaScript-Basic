@@ -31,20 +31,19 @@ document.addEventListener("DOMContentLoaded",()=>{
             else{
                 /** 폭탄 클릭 **/
                 if(+item.textContent === bombpos){
-                    item.innerHTML = `<img src='./static/images/boom.png'>`
+                    item.innerHTML = `<img src='./static/images/boom.png'>`;
                     console.log(+item.textContent);
                     const bombtext = document.querySelector(".bombtext");
-                    bombtext.innerHTML = "<p class=tracking-in-expand-fwd-bottom>BOMB!</p>"
+                    bombtext.innerHTML = "<p class=tracking-in-expand-fwd-bottom>BOMB!</p>";
 
                     /** Restart **/
                     const restart = document.querySelector(".restart");
-                    restart.innerHTML = "<button class=resbt>Restart?</button>"
+                    restart.innerHTML = "<button class=resbt>Restart?</button>";
                     let res = document.querySelector(".resbt");
                     let cnt = 1;
                     bt.disabled = true;
                     res.addEventListener("click", ()=>{
                         touchcell.forEach( (item) => {
-                            console.log(item);
                             item.textContent = cnt;
                             cnt ++;
                         })
@@ -52,12 +51,13 @@ document.addEventListener("DOMContentLoaded",()=>{
                         cnt = 1;
                         flag = 0;
                         bt.disabled = false;
+                        restart.innerHTML = "";
                         bombpos = bomb();
                     })
                 }
                 /** 하트 클릭 **/
                 else{
-                    item.innerHTML = `<img src='./static/images/hart.png'>`
+                    item.innerHTML = `<img src='./static/images/hart.png'>`;
                     console.log(+item.textContent);
                 }
             }
