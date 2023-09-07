@@ -29,11 +29,14 @@ document.addEventListener("DOMContentLoaded",()=>{
                 alert("폭탄을 먼저 섞으세요");
             }
             else{
+                /** 폭탄 클릭 **/
                 if(+item.textContent === bombpos){
                     item.innerHTML = `<img src='./static/images/boom.png'>`
                     console.log(+item.textContent);
                     const bombtext = document.querySelector(".bombtext");
                     bombtext.innerHTML = "<p class=tracking-in-expand-fwd-bottom>BOMB!</p>"
+
+                    /** Restart **/
                     const restart = document.querySelector(".restart");
                     restart.innerHTML = "<button class=resbt>Restart?</button>"
                     let res = document.querySelector(".resbt");
@@ -46,12 +49,13 @@ document.addEventListener("DOMContentLoaded",()=>{
                             cnt ++;
                         })
                         bombtext.textContent = "";
-                        cnt = 0;
+                        cnt = 1;
                         flag = 0;
                         bt.disabled = false;
                         bombpos = bomb();
                     })
                 }
+                /** 하트 클릭 **/
                 else{
                     item.innerHTML = `<img src='./static/images/hart.png'>`
                     console.log(+item.textContent);
