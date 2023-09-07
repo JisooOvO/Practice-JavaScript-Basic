@@ -2,6 +2,11 @@ body{
     background-color: beige;
 }
 
+img{
+  width: 100px;
+  height: 100px;
+}
+
 .grid{
     margin: 20px;
     display: grid;
@@ -17,6 +22,10 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.cell:hover{
+  cursor: pointer;
 }
 
 .grid div{
@@ -80,4 +89,3 @@ body{
       opacity: 1;
     }
   }
-  
