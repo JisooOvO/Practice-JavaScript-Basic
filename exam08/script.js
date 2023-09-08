@@ -215,20 +215,37 @@ function show(Nm){
         let tableHead = "";
         let inner = "";
         let i = 0;
-        let tabeltitile = ["영화코드","영화명","영화명(영문)","영화명(원문)","제작연도","상영시간","개봉연도","제작상태명","영화유형명","제작국가","제작국가명","장르명"]
+        let tabeltitile = ["영화코드","영화명","영화명(영문)","상영시간","제작연도","개봉연도","제작상태","영화유형","제작국가","장르","감독","배우"]
         for ( let item in movieInfoResult){
-            tableHead += `<th>${tabeltitile[i++]}</th>`;
-            console.log(typeof movieInfoResult[item]);
-            if( typeof (movieInfoResult[item]) == Object){
-                //여기서 다시
-                console.log("이건 객체야");
-                continue;
+            if (i<=11)
+                tableHead += `<th>${tabeltitile[i]}</th>`;
+            
+            console.log(movieInfoResult[item]);
+            console.log(item);
+            
+            if( typeof movieInfoResult[item] === 'object'){
+                let tmp = "";
+                for ( let i of movieInfoResult[item]){
+                    let n = 0;
+                    for ( let j in i){
+                        if ( n >= 1)
+                            tmp += "(";
+                        tmp += i[j];
+                        n++;
+                        if ( n >= 2){
+                            tmp += ")<br>";
+                            break;
+                        }             
+                    }
+                    tmp +="<br>";
+                }
+                inner += `<td>${tmp}</td>`;
             }
-            else{
-                inner += `<td>${movieInfoResult[item]}</td>`;
+            else if(  typeof movieInfoResult[item] === 'string' && item != "movieNmOg" ){
+                inner += `<td class="result">${movieInfoResult[item]}</td>`;
             }
-            if(i>11)
-                break;
+            if(i++>11)
+                break;    
         }
         detail.innerHTML = `<thead><tr>${tableHead}</tr></thead><tbody><tr> ${inner}</tr></tbody>`;
     })

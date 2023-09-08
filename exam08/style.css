@@ -38,7 +38,7 @@ th:nth-of-type(1){
 }
 
 th:nth-of-type(2){
-    width: 200px;
+    width: 250px;
 }
 
 th:nth-of-type(3){
@@ -78,11 +78,11 @@ th:nth-of-type(10){
 }
 
 th:nth-of-type(11){
-    width: 200px;
+    width: 400px;
 }
 
 th:nth-of-type(12){
-    width: 200px;
+    width: 400px;
 }
 
 td:nth-of-type(1), td:nth-of-type(2){
@@ -117,4 +117,8 @@ td:nth-of-type(4),td:nth-of-type(5),td:nth-of-type(6),td:nth-of-type(7),td:nth-o
 #detail{
     white-space: nowrap;
     table-layout: fixed;
+}
+
+.result{
+    display: table-cell !important;
 }
