@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>K-Digital 무더위 쉼터 정보 서비스</title>
+</head>
+<body>
+    <main class="container">
+        <form>
+         <article>
+            <header>
+             <hgroup>
+                <h1>무더위 쉼터 정보</h1>
+                <h2>부산대학교 K-Digital Training 남지수</h2>
+             </hgroup> 
+            <div class="grid">
+                <select id="sel1">
+                    <option value="">--시도 선택--</option>
+                </select>
+                <select id="sel2">
+                    <option value="">--구 선택--</option>
+                </select>
+                <select id="sel3">
+                    <option value="">--동 선택--</option>
+                </select>
+                <select id="sel4">
+                    <option value="">--시설 유형--</option>
+                </select>
+                <button id="bt">확인</button>
+            </div>
+          </form>
+        </header>
+        <figure>
+            <table><div id="viewTb" class="flexbox"></div></table>
+        </figure>
+        </article>
+        
+    </main>
+</body>
+</html>

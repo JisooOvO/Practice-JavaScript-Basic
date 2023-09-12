@@ -2,10 +2,6 @@ body{
     background-color: beige;
 }
 
-article{
-    overflow: scroll;
-}
-
 table{
     white-space: nowrap;
     table-layout: fixed;
