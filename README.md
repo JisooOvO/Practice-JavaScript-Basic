@@ -1,4 +1,4 @@
-# Practice JavaScript 연습 02
+# Practice JavaScript 연습
 
 > HTML,CSS,JavaScript 연습입니다.
 
